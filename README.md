@@ -13,3 +13,11 @@ install:
 
 
 laravel new freecodegram
+php artisan serve (localhost:8000)
+
+### Add `make:auth` for Laravel 6.0
+
+composer require laravel/ui
+php artisan ui vue --auth
+npm install && npm run dev
+php artisan serve
