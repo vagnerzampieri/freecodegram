@@ -23,3 +23,9 @@ composer require laravel/ui
 php artisan ui vue --auth
 npm install && npm run dev
 php artisan serve
+
+### Migrate
+
+sudo pacman -S php-pgsql
+uncomment `pgsql` and `pdo-pgsql` extensions in `etc/php/php.ini file
+php artisan migrate
