@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
 {
-    public function index($user)
+    public function index($username)
     {
-        $user = User::find($user);
+        $user = User::where(['username' => $username])->first();
 
         return view('home', [
             'user' => $user,
