@@ -9,7 +9,7 @@ class ProfilesController extends Controller
 {
     public function index($username)
     {
-        $user = User::where(['username' => $username])->first();
+        $user = User::findByUsername($username);
 
         return view('home', [
             'user' => $user,

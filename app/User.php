@@ -11,6 +11,18 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+     * Scope a query to only include users of a given username.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder $query
+     * @param  mixed $username
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeFindByUsername($query, $username)
+    {
+        return $query->where('username', '=', $username)->first();
+    }
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
