@@ -15,6 +15,11 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
     /**
      * Scope a query to only include users of a given username.
      *
@@ -24,7 +29,7 @@ class User extends Authenticatable
      */
     public function scopeFindByUsername($query, $username)
     {
-        return $query->where('username', '=', $username)->first();
+        return $query->where('username', '=', $username)->firstOrFail();
     }
 
     /**
