@@ -12,7 +12,7 @@ class ProfilesController extends Controller
         $user = User::findByUsername($username);
         $profile = $user->profile;
 
-        return view('home', [
+        return view('profiles.index', [
             'user' => $user,
             'profile' => $profile,
         ]);
