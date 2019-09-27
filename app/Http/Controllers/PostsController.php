@@ -30,6 +30,6 @@ class PostsController extends Controller
             'image' => $imagePath
         ]);
 
-        dd(request()->all());
+        return redirect('/' . auth()->user()->username);
     }
 }
