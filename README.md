@@ -27,7 +27,7 @@ php artisan serve
 ### Migrate
 
 sudo pacman -S php-pgsql
-uncomment `pgsql` and `pdo-pgsql` extensions in `etc/php/php.ini file
+uncomment `pgsql` and `pdo-pgsql` extensions in `etc/php/php.ini` file
 php artisan migrate
 
 ### Packages for archlinux
