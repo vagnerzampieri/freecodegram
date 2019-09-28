@@ -29,3 +29,11 @@ php artisan serve
 sudo pacman -S php-pgsql
 uncomment `pgsql` and `pdo-pgsql` extensions in `etc/php/php.ini file
 php artisan migrate
+
+### Packages for archlinux
+
+###### GD library for image
+  - sudo pacman -S php-gd
+  - then in your `php.ini` for me in `/etc/php/php.ini` uncomment line `;extension=gd.` so by removing semicolon.
+  - restart application server
+
