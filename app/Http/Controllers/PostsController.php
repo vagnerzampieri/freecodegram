@@ -12,6 +12,11 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
 
+    public function show(\App\Post $post)
+    {
+        return view('posts.show', compact('post'));
+    }
+
     public function create()
     {
         return view('posts.create');
