@@ -20,11 +20,15 @@ class ProfilesController extends Controller
         $user = User::findByUsername($username);
         $profile = $user->profile;
 
+        $this->authorize('update', $profile);
+
         return view('profiles.edit', compact('user', 'profile'));
     }
 
     public function update(User $user)
     {
+        $this->authorize('update', $user->profile);
+
         $data = request()->validate([
             'title' => 'required',
             'description' => 'required',
@@ -32,7 +36,7 @@ class ProfilesController extends Controller
             'image' => ''
         ]);
 
-        $user->profile->update($data);
+        auth()->user()->profile->update($data);
         return redirect("/profile/{$user->id}");
     }
 }
