@@ -20,4 +20,7 @@ Auth::routes();
 Route::get('/p/create', 'PostsController@create');
 Route::get('/p/{post}', 'PostsController@show');
 Route::post('/p', 'PostsController@store');
+
 Route::get('/{username}', 'ProfilesController@index')->name('profile.show');
+Route::get('/{username}/edit', 'ProfilesController@edit')->name('profile.edit');
+Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
