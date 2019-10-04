@@ -14,4 +14,10 @@ class Profile extends Model
     protected $fillable = [
         'title', 'description', 'url', 'image'
     ];
+
+    public function profileImage()
+    {
+        $imagePath = ($this->image) ? '/storage/' . $this->image : '/images/no-image.png';
+        return $imagePath;
+    }
 }
