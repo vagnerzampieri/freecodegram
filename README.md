@@ -22,6 +22,9 @@
   - npm install && npm run dev
   - php artisan serve
 
+### Views with Vue.js
+  - npm run watch
+
 ### Migrate
   - sudo pacman -S php-pgsql
   - uncomment `pgsql` and `pdo-pgsql` extensions in `etc/php/php.ini` file
